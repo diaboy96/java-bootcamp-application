@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Java bootcamp app</title>
+</head>
+<body>
+    <form action="#" th:action="@{/}" th:object="${insuranceRequestForm}" method="post">
+        <label for="policy-number">Policy number:</label><br>
+        <input type="text" id="policy-number" name="policy-number" th:field="*{policyNumber}">
+        <span th:if="${#fields.hasErrors('policyNumber')}" th:errors="*{policyNumber}" style="color: red">Policy number error</span><br>
+
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" th:field="*{name}">
+        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red">Name error</span><br>
+
+        <label for="surname">Surname:</label><br>
+        <input type="text" id="surname" name="surname" th:field="*{surname}">
+        <span th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}" style="color: red">Surname error</span><br>
+
+        <label for="request-field">Request field:</label><br>
+        <textarea id="request-field" name="request-field" th:field="*{requestField}"></textarea>
+        <span th:if="${#fields.hasErrors('requestField')}" th:errors="*{requestField}" style="color: red">Request field error</span><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
