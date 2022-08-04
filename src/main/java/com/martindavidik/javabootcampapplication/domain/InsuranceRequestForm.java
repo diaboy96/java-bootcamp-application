@@ -1,10 +1,19 @@
 package com.martindavidik.javabootcampapplication.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+@Entity
 public class InsuranceRequestForm {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     @Size(min = 5, max = 35)
     private String policyNumber;
@@ -20,6 +29,24 @@ public class InsuranceRequestForm {
     @NotNull
     @Size(max = 300)
     private String requestField;
+
+    public InsuranceRequestForm() {
+    }
+
+    public InsuranceRequestForm(String policyNumber, String name, String surname, String requestField) {
+        this.policyNumber = policyNumber;
+        this.name = name;
+        this.surname = surname;
+        this.requestField = requestField;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getPolicyNumber() {
         return policyNumber;
@@ -51,9 +78,5 @@ public class InsuranceRequestForm {
 
     public void setRequestField(String requestField) {
         this.requestField = requestField;
-    }
-
-    public String toString() {
-        return "InsuranceRequest(policyNumber: " + this.policyNumber + ", name: " + this.name + ", surname: " + this.surname + ", requestField: " + this.requestField + ")";
     }
 }

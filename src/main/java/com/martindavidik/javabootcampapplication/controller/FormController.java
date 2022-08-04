@@ -1,6 +1,7 @@
 package com.martindavidik.javabootcampapplication.controller;
 
 import com.martindavidik.javabootcampapplication.domain.InsuranceRequestForm;
+import com.martindavidik.javabootcampapplication.service.InsuranceRequestFormService;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,17 @@ import javax.validation.Valid;
 
 @Controller
 public class FormController implements WebMvcConfigurer {
+
+    private final InsuranceRequestFormService insuranceRequestFormService;
+
+    /**
+     * Constructor
+     *
+     * @param insuranceRequestFormService InsuranceRequestFormService
+     */
+    public FormController(InsuranceRequestFormService insuranceRequestFormService) {
+        this.insuranceRequestFormService = insuranceRequestFormService;
+    }
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
@@ -29,8 +41,17 @@ public class FormController implements WebMvcConfigurer {
             return "insurance-request-form";
         }
 
-        // Todo: insert data to database
+        saveFormDataToDB(insuranceRequestForm);
 
         return "redirect:/form-successfully-sent";
+    }
+
+    /**
+     * Saves insuranceRequestForm to database
+     *
+     * @param insuranceRequestForm InsuranceRequestForm
+     */
+    private void saveFormDataToDB(@Valid InsuranceRequestForm insuranceRequestForm) {
+        insuranceRequestFormService.save(insuranceRequestForm);
     }
 }
