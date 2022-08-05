@@ -1,8 +1,8 @@
-package com.martindavidik.javabootcampapplication.service.impl;
+package com.martindavidik.javabootcampapplication.services.impl;
 
 import com.martindavidik.javabootcampapplication.domain.InsuranceRequestForm;
-import com.martindavidik.javabootcampapplication.repository.InsuranceRequestFormRepository;
-import com.martindavidik.javabootcampapplication.service.InsuranceRequestFormService;
+import com.martindavidik.javabootcampapplication.repositories.InsuranceRequestFormRepository;
+import com.martindavidik.javabootcampapplication.services.InsuranceRequestFormService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

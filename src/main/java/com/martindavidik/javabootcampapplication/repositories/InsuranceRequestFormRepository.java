@@ -1,4 +1,4 @@
-package com.martindavidik.javabootcampapplication.repository;
+package com.martindavidik.javabootcampapplication.repositories;
 
 import com.martindavidik.javabootcampapplication.domain.InsuranceRequestForm;
 import org.springframework.data.repository.CrudRepository;

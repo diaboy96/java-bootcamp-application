@@ -1,4 +1,4 @@
-package com.martindavidik.javabootcampapplication.service;
+package com.martindavidik.javabootcampapplication.services;
 
 import com.martindavidik.javabootcampapplication.domain.InsuranceRequestForm;
 

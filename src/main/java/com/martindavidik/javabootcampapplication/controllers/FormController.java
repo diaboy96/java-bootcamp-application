@@ -1,7 +1,7 @@
-package com.martindavidik.javabootcampapplication.controller;
+package com.martindavidik.javabootcampapplication.controllers;
 
 import com.martindavidik.javabootcampapplication.domain.InsuranceRequestForm;
-import com.martindavidik.javabootcampapplication.service.InsuranceRequestFormService;
+import com.martindavidik.javabootcampapplication.services.InsuranceRequestFormService;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
